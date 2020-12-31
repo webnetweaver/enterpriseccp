@@ -1,0 +1,132 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$kemper-brand: (
+    50 : #e0e6eb,
+    100 : #b3c1cd,
+    200 : #8098ab,
+    300 : #4d6e89,
+    400 : #264f70,
+    500 : #003057,
+    600 : #002b4f,
+    700 : #002446,
+    800 : #001e3c,
+    900 : #00132c,
+    A100 : #6595ff,
+    A200 : #3272ff,
+    A400 : #004ffe,
+    A700 : #0047e5,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$kemper-accent: (
+    50 : #fbe5e4,
+    100 : #f4bfbb,
+    200 : #ed948e,
+    300 : #e56960,
+    400 : #e0493e,
+    500 : #da291c,
+    600 : #d62419,
+    700 : #d01f14,
+    800 : #cb1911,
+    900 : #c20f09,
+    A100 : #ffeded,
+    A200 : #ffbbba,
+    A400 : #ff8987,
+    A700 : #ff706e,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$kemper-palette-primary: mat-palette($kemper-brand);
+$kemper-palette-accent: mat-palette($kemper-accent);
+
+// The warn palette is optional (defaults to red).
+$kemper-palette-warn: mat-palette($mat-red);
+
+// Kemper fonts close to Whitney
+$kemper-typography: mat-typography-config(
+  $font-family: 'Catamaran, Calibri, sans-serif'
+);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$kemper-theme: mat-light-theme((
+  color: (
+    primary: $kemper-palette-primary,
+    accent: $kemper-palette-accent,
+    warn: $kemper-palette-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat-base-typography($kemper-typography);
+@include angular-material-theme($kemper-theme);
+
+
+/* core Kemper component style overrides */
+.mat-typography h2 {
+  font: 700 25px/42px Catamaran, Calibri, sans-serif;
+}
+
+.mat-raised-button {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-weight: bold;
+  padding-top: 1rem;
+  padding-right: 2.75rem;
+  padding-bottom: 1.0625rem;
+  padding-left: 2.75rem;
+  letter-spacing: 0.09375rem;
+  text-transform: uppercase;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+button:hover, 
+button:focus {
+  text-decoration: underline;
+}
+

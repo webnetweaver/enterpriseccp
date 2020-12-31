@@ -1,0 +1,106 @@
+<p>
+  <mat-toolbar color="primary" style="background-color:black">
+    <mat-toolbar-row>
+      <span>
+        <img src="../assets/logo.png" style="transform:scale(0.8)"/>
+      </span>
+      <span class="example-spacer"></span>
+      <mat-form-field appearance="fill">
+        <mat-select value="Status">
+          <mat-option value="Status">Status</mat-option>
+          <mat-option value="Option 2">Option 2</mat-option>
+          <mat-option value="Option 3">Option 3</mat-option>
+        </mat-select>
+      </mat-form-field>  
+    </mat-toolbar-row>
+<!--
+    <mat-toolbar-row>
+      <span>Second Line</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  -->
+  </mat-toolbar>
+</p>
+<style>
+  .phone-button{
+    font-size:50px;
+    border-width: 1px;
+    border-style:solid;
+    cursor: pointer;
+  }
+
+  .phone-button:focus{
+    background-color: turquoise;
+  }
+
+  .content-box{
+    border-width: 1px;
+    border-style:solid;
+    padding:10px;
+    margin:10px;
+    height:70%
+  }
+</style>
+
+<mat-sidenav-container class="example-container" style="min-height:640px;">
+    <mat-sidenav color="primary" mode="side" opened style="min-width:100px;">
+      <mat-list-item> <i style="font-size:80px;color:turquoise" class="material-icons">phone</i> </mat-list-item>
+      <mat-list-item> <i style="font-size:80px" class="material-icons">chat</i> </mat-list-item>
+    </mat-sidenav>
+    <mat-sidenav-content style="min-height:480px;height:auto;padding-left:5px" fxLayout="row" fxFlex="100%" fxLayoutAlign="start stretch">
+      <div fxFlex="15%" fxLayout="column" fxLayoutAlign="start start">
+        <h4 style="font-weight:bold">Call Log</h4>
+        <span>(555) 555-1234</span>
+        <span>(555) 555-1234</span>
+        <span>(555) 555-1234</span>
+      </div>
+      <div fxFlex="grow">
+        <div fxFlex="grow" style="height:auto" fxLayout="column" fxLayoutAlign="stretch stretch">
+          <div fxLayout="row" style="border-width: 1px;border-style:solid" fxLayoutGap="2vw" fxFlex="8%">
+            <i style="font-size:40px" class="material-icons">leaderboard</i>
+            <i style="font-size:40px" class="material-icons">leaderboard</i>
+            <i style="font-size:40px" class="material-icons">leaderboard</i>
+            <i style="font-size:40px" class="material-icons">leaderboard</i>
+          </div>
+          <div fxFlex="grow" fxLayout="row">
+            <div style="border-width: 1px;border-style:solid" fxFlex="25%" fxLayout="column" fxLayoutAlign="start center">
+              <div fxFlex="55%" fxLayoutAlign="space-evenly space-evenly" align-items="center" gdColumns="30% 30% 30%" gdRows="23% 23% 23% 23%" gdGap="2%" style="width:90%" fxFlexOffset="5px">
+                <div fxLayoutAlign="center center" class="phone-button"><span>1</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>2</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>3</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>4</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>5</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>6</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>7</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>8</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>9</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>*</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>0</span></div>
+                <div fxLayoutAlign="center center" class="phone-button"><span>#</span></div>
+              </div>
+              <div fxFlexOffset="5px">
+                <button style="width:10vw" mat-raised-button color="accent">
+                  Dial
+                </button>
+              </div>
+            </div>
+            <div fxFlex="shrink" fxLayout="column">
+              <div style="border-width: 1px;border-style:solid" fxFlex="25%">
+                <div class="content-box">LOB and call status</div>
+              </div>
+              <div style="border-width: 1px;border-style:solid" fxFlex="75%">
+                <div class="content-box">Depends on LOB</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+    
